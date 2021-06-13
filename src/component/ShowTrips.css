@@ -1,0 +1,49 @@
+.showTrips__container h3{
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+    font-weight: bolder;
+}
+.showTrips__containerFilter{
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.showTrips__containerFilter button{
+    font-size: 1rem;
+    color: #fff;
+    padding: 0.2rem 0.6rem;
+    background: transparent;
+    cursor: pointer;
+}
+.trip {
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    height: 180px;
+    padding: 0 1rem;
+    overflow-y: auto;
+  }
+  .trip__head{
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.2rem;
+      color: white;
+      font-weight: bold;
+      border-bottom: 2px solid chocolate;
+      padding: 0.2rem 0;
+  }
+  .trip__body{
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.2rem;
+      color: rgb(255, 255, 255);
+  }
+
+/* media queries */
+  
+@media(max-width:700px){
+    .trip{
+        width: 100%;
+    }
+}
