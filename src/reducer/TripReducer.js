@@ -18,6 +18,11 @@ const TripReducer = (state = initialData, action) => {
       };
     default:
       return state;
+    case "Delete_TRIP":
+      const newArr= state.list.filter(item=> item.id !== action.id)
+      return{
+        list:newArr
+      }
   }
 };
 export default TripReducer;

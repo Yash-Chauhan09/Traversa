@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import "./ShowTrips.css";
 import '../App.css'
+import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline'
 import { useSelector } from "react-redux";
+import { deleteTrip} from '../actions/index'
+import {useDispatch} from 'react-redux'
 function ShowTrips() {
+  const dispatch = useDispatch();
     const[button,setButton]= useState('')
   const trips = useSelector((state) => state.TripReducer.list);
   const handleClick = (e)=>{
@@ -23,7 +27,7 @@ function ShowTrips() {
             <div className="trip__head">
               <h5>Date</h5>
               <h5>Place</h5>
-              <h5>Type</h5>
+              <h5 style={{marginRight:'15px'}}>Type</h5>
             </div>
             {trips.filter((item)=>{
                     if(button === '' || button ==="ALL" ){
@@ -37,8 +41,10 @@ function ShowTrips() {
               return (
                 <div className="trip__body" key={item.id}>
                   <p>{item.data.date}</p>
-                  <p style={{marginRight:'18px'}}>{item.data.place}</p>
-                  <p>{item.data.type}</p>
+                  <p>{item.data.place}</p>
+                  <p>{item.data.type} <span onClick={()=>{
+                      dispatch(deleteTrip(item.id))
+                  }}><DeleteOutlineIcon className='deleteIcon'/></span></p>
                 </div>
               );
             })}

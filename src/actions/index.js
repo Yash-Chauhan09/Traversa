@@ -7,3 +7,9 @@ export const addTrip = (data)=>{
         }
     }
 }
+export const deleteTrip=(id)=>{
+    return{
+        type: "Delete_TRIP",
+         id
+    }
+}
